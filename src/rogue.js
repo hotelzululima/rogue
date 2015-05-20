@@ -1,38 +1,58 @@
-// Finds all rouge elements exceeding the page width.
-function findRogueElements() {
+﻿/// <reference path="common.js" />
 
-    var docWidth = document.documentElement.offsetWidth;
+// Finds all rouge elements exceeding the specified width.
+function findRogueElements(width) {
+    console.log('searching for rogue elements...');
+
+    // if no width defined, use page width
+    width = defaultFor(width, document.documentElement.offsetWidth);
+        
+    console.log('element max width: ' + width + 'px');
+
+    // set up rogue element counter
     var count = 0;
 
-    [].forEach.call(document.querySelectorAll('*'),
-      function (element) {
-          if (element.offsetWidth > docWidth) {
-              count += 1;
+    // select all elements in the document
+    var nodeList = document.querySelectorAll('*');
+    console.log('elements selected: ' + nodeList.length);
 
-              console.log("Element Id: " + element.id +
-                          "\nParent: " + element.parentElement.id +
-                          "\nClass: " + element.className +
-                          "\nWidth: " + element.offsetWidth +
-                          "\nTag: " + element.tagName +
-                          "\nHeight: " + element.offsetHeight
-                  );
+    // iterate over elements and compare element width with specified width value
+    forEach(nodeList, function (index, element) {
+        
+        if (element.offsetWidth > width) {
+            console.log('rogue element found!');
 
-              //set element background to highlight
-              element.style.backgroundColor = "#FF0000";
-              
-              //bring element to front
-              element.style.zIndex = 99999;
+            // increase counter
+            count += 1;
 
-              //reset element height if set to 0
-              if (element.offsetHeight == 0) {
-                  element.style.height = "50px";
-              }
-          }
-      }
-    );
+            //  log element details to console
+            console.log("Element Id: " + element.id +
+                        "\nParent: " + element.parentElement.id +
+                        "\nClass: " + element.className +
+                        "\nWidth: " + element.offsetWidth +
+                        "\nTag: " + element.tagName +
+                        "\nHeight: " + element.offsetHeight
+                );
 
+            // highlight element background
+            element.style.backgroundColor = "#FF0000";
+
+            // bring element to front
+            element.style.zIndex = 99999;
+
+            // reset element height if set to 0
+            if (element.offsetHeight == 0) {
+                element.style.height = "50px";
+            }
+        }
+
+    });
+
+    // display results
     if (count > 0) {
-        alert('You have ' + count + ' rogue elements exceeding your page width, these elements have been highlighted.');
+        console.log('Search Complete.\nYou have ' + count + ' rogue elements exceeding the specified width of {' + width + 'px}, these elements have been highlighted in red.');
+    } else {
+        console.log('Search Complete. No rogue elements have been found.')
     }
 }
 
