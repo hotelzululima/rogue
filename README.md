@@ -5,7 +5,7 @@ This can help in troubleshooting horizontal scrollbar issues.
 
 #### Installation ####
 
-Rogue can be installed via the Nuget Package Manager by using the following command
+Rogue can be installed via the [Nuget Package Manager](https://www.nuget.org/packages/Rogue/) by using the following command
 
     PM> Install-Package Rogue 
     
