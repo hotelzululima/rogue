@@ -1,6 +1,6 @@
 ﻿/// <reference path="common.js" />
 
-// Finds all rouge elements exceeding the specified width.
+// Finds all rogue elements exceeding the specified width.
 function findRogueElements(width) {
     console.log('searching for rogue elements...');
 
