@@ -3,6 +3,18 @@ Rogue tracks down and highlights elements exceeding a ***specified*** width.
 
 This can help in troubleshooting horizontal scrollbar issues. 
 
+#### Installation ####
+
+Rogue can be installed via the Nuget Package Manager by using the following command
+
+    PM> Install-Package Rogue 
+    
+Once installed, add the following to the head section or before the closing body tag of your page.
+```html
+<script src="js/common.js"></script>
+<script src="js/rogue.js"></script>
+```
+
 #### Usage ####
 
 Find all elements exceeding the width of the page.
