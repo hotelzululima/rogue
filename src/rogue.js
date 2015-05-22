@@ -1,5 +1,14 @@
 ﻿/// <reference path="common.js" />
 
+/**
+ * Rogue v1.0.2
+ * by Enki Matt - http://github.com/enkimatt
+ *
+ * @license http://creativecommons.org/licenses/by/2.5/
+ * - Free for use in both personal and commercial projects
+ * - Attribution requires leaving author name, author link, and the license info intact
+ */
+
 // Finds all rogue elements exceeding the specified width.
 function findRogueElements(width) {
     console.log('searching for rogue elements...');
