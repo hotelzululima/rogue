@@ -11,7 +11,6 @@ Rogue can be installed via the [Nuget Package Manager](https://www.nuget.org/pac
     
 Once installed, add the following to the head section or before the closing body tag of your page.
 ```html
-<script src="js/common.js"></script>
 <script src="js/rogue.js"></script>
 ```
 
@@ -46,7 +45,5 @@ $(function () {
     findRogueElements();
 });
 ```
-#### File Structure ####
 
-The source is currently broken into two files, common.js and rogue.js. The common.js file contains helper functions. 
-If you would prefer to have it all in one file, copy and paste the helper functions to rogue.js.
+
