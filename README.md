@@ -11,7 +11,7 @@ Rogue can be installed via the [Nuget Package Manager](https://www.nuget.org/pac
     
 Once installed, add the following to the head section or before the closing body tag of your page.
 ```html
-<script src="js/rogue.js"></script>
+<script src="scripts/rogue.js"></script>
 ```
 
 #### Usage ####
