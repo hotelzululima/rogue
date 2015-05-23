@@ -1,7 +1,5 @@
-﻿/// <reference path="common.js" />
-
-/**
- * Rogue v1.0.2
+﻿/**
+ * Rogue v1.1.0
  * by Enki Matt - http://github.com/enkimatt
  *
  * @license http://creativecommons.org/licenses/by/2.5/
@@ -65,3 +63,12 @@ function findRogueElements(width) {
     }
 }
 
+function forEach(array, callback, scope) {
+    for (var i = 0; i < array.length; i++) {
+        callback.call(scope, i, array[i]);
+    }
+};
+
+function defaultFor(arg, val) {
+    return typeof arg !== 'undefined' ? arg : val;
+}
