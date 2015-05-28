@@ -44,8 +44,8 @@ function findRogueElements(width) {
             // highlight element background
             element.style.backgroundColor = "#FF0000";
 
-            // bring element to front
-            element.style.zIndex = 99999;
+            // bring element to front ** z-index only works on positioned elements **
+            element.style.zIndex = 9999;
 
             // reset element height if set to 0
             if (element.offsetHeight == 0) {
